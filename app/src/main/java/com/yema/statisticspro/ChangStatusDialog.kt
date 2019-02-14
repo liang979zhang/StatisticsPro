@@ -16,13 +16,13 @@ class ChangStatusDialog : Dialog {
 
     }
 
-    override fun onCreate(savedInstanceState: Bundle) {
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.dialog_chang_status)
-
+        et_num.setText("")
         tv_num_add.setOnClickListener {
             if (!et_num.text.isEmpty()) {
-                clickListenerInterface!!.valuedata(et_num.text.toString() as Float)
+                clickListenerInterface!!.valuedata(et_num.text.toString().toFloat())
                 dismiss()
 
             } else {
